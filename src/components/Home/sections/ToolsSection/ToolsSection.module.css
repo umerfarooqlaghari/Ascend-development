@@ -1,0 +1,114 @@
+.toolsSection {
+  padding: 80px 0;
+  background-color: #ffffff;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 16px;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #666666;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.toolsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+  margin-bottom: 60px;
+}
+
+.toolCard {
+  background: #ffffff;
+  padding: 40px 24px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  border: 1px solid #f0f0f0;
+}
+
+.toolCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.toolIcon {
+  font-size: 3rem;
+  margin-bottom: 24px;
+  display: block;
+}
+
+.toolTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 16px;
+}
+
+.toolDescription {
+  color: #666666;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+.ctaSection {
+  text-align: center;
+}
+
+.exploreBtn {
+  display: inline-block;
+  background-color: transparent;
+  color: #fa177e;
+  border: 2px solid #fa177e;
+  padding: 16px 32px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.exploreBtn:hover {
+  background-color: #fa177e;
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .toolsSection {
+    padding: 60px 0;
+  }
+  
+  .title {
+    font-size: 2rem;
+  }
+  
+  .toolsGrid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  
+  .toolCard {
+    padding: 32px 20px;
+  }
+}
