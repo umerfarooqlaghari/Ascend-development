@@ -118,149 +118,79 @@
   }
 }
 
-/* Pyramid Stripes - Creating 3D triangular wireframe */
-.stripe {
-  position: absolute;
-  border: 2px solid white;
-  background: transparent;
+/* SVG Pyramid - Creating 3D triangular wireframe */
+.pyramidSvg {
+  width: 100%;
+  height: 100%;
   transform-style: preserve-3d;
-  border-radius: 8px;
+  animation: pyramidRotate 12s linear infinite;
 }
 
-/* Create triangular outlines using CSS borders and transforms */
-.stripe::before,
-.stripe::after {
-  content: '';
-  position: absolute;
-  border: 2px solid white;
-  background: transparent;
+/* Individual triangle stroke animations */
+.triangleStroke {
+  transform-origin: center center;
+  animation: triangleFloat 12s ease-in-out infinite;
 }
 
-/* Individual stripe positioning - creating concentric triangular outlines */
-.stripe1 {
-  width: 400px;
-  height: 346px;
-  top: 50px;
-  left: 50px;
-  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-  transform: translateZ(0px);
+/* Staggered animation delays for depth effect */
+.triangle1 { animation-delay: 0s; }
+.triangle2 { animation-delay: -0.2s; }
+.triangle3 { animation-delay: -0.4s; }
+.triangle4 { animation-delay: -0.6s; }
+.triangle5 { animation-delay: -0.8s; }
+.triangle6 { animation-delay: -1s; }
+.triangle7 { animation-delay: -1.2s; }
+.triangle8 { animation-delay: -1.4s; }
+.triangle9 { animation-delay: -1.6s; }
+.triangle10 { animation-delay: -1.8s; }
+.triangle11 { animation-delay: -2s; }
+.triangle12 { animation-delay: -2.2s; }
+.triangle13 { animation-delay: -2.4s; }
+.triangle14 { animation-delay: -2.6s; }
+.triangle15 { animation-delay: -2.8s; }
+.triangle16 { animation-delay: -3s; }
+.triangle17 { animation-delay: -3.2s; }
+.triangle18 { animation-delay: -3.4s; }
+.triangle19 { animation-delay: -3.6s; }
+.triangle20 { animation-delay: -3.8s; }
+
+/* Main pyramid rotation animation */
+@keyframes pyramidRotate {
+  0% {
+    transform: rotateX(15deg) rotateY(0deg) rotateZ(0deg);
+  }
+  25% {
+    transform: rotateX(25deg) rotateY(90deg) rotateZ(5deg);
+  }
+  50% {
+    transform: rotateX(35deg) rotateY(180deg) rotateZ(0deg);
+  }
+  75% {
+    transform: rotateX(25deg) rotateY(270deg) rotateZ(-5deg);
+  }
+  100% {
+    transform: rotateX(15deg) rotateY(360deg) rotateZ(0deg);
+  }
 }
 
-.stripe2 {
-  width: 380px;
-  height: 329px;
-  top: 58px;
-  left: 60px;
-  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-  transform: translateZ(-8px);
-}
-
-.stripe3 {
-  width: 360px;
-  height: 312px;
-  top: 66px;
-  left: 70px;
-  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-  transform: translateZ(-16px);
-}
-
-.stripe4 {
-  width: 340px;
-  height: 295px;
-  top: 74px;
-  left: 80px;
-  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-  transform: translateZ(-24px);
-}
-
-.stripe5 {
-  width: 320px;
-  height: 277px;
-  top: 82px;
-  left: 90px;
-  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-  transform: translateZ(-32px);
-}
-
-.stripe6 {
-  width: 300px;
-  height: 260px;
-  top: 90px;
-  left: 100px;
-  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-  transform: translateZ(-40px);
-}
-
-.stripe7 {
-  width: 280px;
-  height: 243px;
-  top: 98px;
-  left: 110px;
-  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-  transform: translateZ(-48px);
-}
-
-.stripe8 {
-  width: 260px;
-  height: 225px;
-  top: 106px;
-  left: 120px;
-  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-  transform: translateZ(-56px);
-}
-
-.stripe9 {
-  width: 240px;
-  height: 208px;
-  top: 114px;
-  left: 130px;
-  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-  transform: translateZ(-64px);
-}
-
-.stripe10 {
-  width: 220px;
-  height: 191px;
-  top: 122px;
-  left: 140px;
-  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-  transform: translateZ(-72px);
-}
-
-.stripe11 {
-  width: 200px;
-  height: 173px;
-  top: 130px;
-  left: 150px;
-  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-  transform: translateZ(-80px);
-}
-
-.stripe12 {
-  width: 180px;
-  height: 156px;
-  top: 138px;
-  left: 160px;
-  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-  transform: translateZ(-88px);
-}
-
-.stripe13 {
-  width: 160px;
-  height: 139px;
-  top: 146px;
-  left: 170px;
-  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-  transform: translateZ(-96px);
-}
-
-.stripe14 {
-  width: 140px;
-  height: 121px;
-  top: 154px;
-  left: 180px;
-  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-  transform: translateZ(-104px);
+/* Individual triangle floating animation */
+@keyframes triangleFloat {
+  0%, 100% {
+    transform: translateZ(0px) scale(1);
+    opacity: 1;
+  }
+  25% {
+    transform: translateZ(20px) scale(1.05);
+    opacity: 0.9;
+  }
+  50% {
+    transform: translateZ(40px) scale(1.1);
+    opacity: 0.8;
+  }
+  75% {
+    transform: translateZ(20px) scale(1.05);
+    opacity: 0.9;
+  }
 }
 
 /* Enhanced 3D Effect with parallax faces */
@@ -285,32 +215,32 @@
     border-width: 3px;
   }
   16.66% {
-    transform: rotateY(60deg) translateZ(var(--depth, 0px)) scaleX(0.8);
+    transform: rotateY(60deg) translateZ(var(--depth, 20px)) scaleX(0.8);
     opacity: 0.9;
     border-width: 2px;
   }
   33.33% {
-    transform: rotateY(120deg) translateZ(var(--depth, 0px)) scaleX(0.6);
+    transform: rotateY(120deg) translateZ(var(--depth, 30px)) scaleX(0.6);
     opacity: 0.7;
     border-width: 1px;
   }
   50% {
-    transform: rotateY(180deg) translateZ(var(--depth, 0px)) scaleX(0.8);
+    transform: rotateY(180deg) translateZ(var(--depth, 30px)) scaleX(0.8);
     opacity: 0.9;
     border-width: 2px;
   }
   66.66% {
-    transform: rotateY(240deg) translateZ(var(--depth, 0px)) scaleX(1);
+    transform: rotateY(240deg) translateZ(var(--depth, 40px)) scaleX(1);
     opacity: 1;
     border-width: 3px;
   }
   83.33% {
-    transform: rotateY(300deg) translateZ(var(--depth, 0px)) scaleX(0.8);
+    transform: rotateY(300deg) translateZ(var(--depth, 30px)) scaleX(0.8);
     opacity: 0.9;
     border-width: 2px;
   }
   100% {
-    transform: rotateY(360deg) translateZ(var(--depth, 0px)) scaleX(1);
+    transform: rotateY(360deg) translateZ(var(--depth, 30px)) scaleX(1);
     opacity: 1;
     border-width: 3px;
   }
@@ -373,21 +303,20 @@
     height: 50vh;
   }
 
-  /* Adjust stripe sizes for mobile */
-  .stripe1 { width: 300px; height: 260px; top: 20px; left: 25px; }
-  .stripe2 { width: 285px; height: 247px; top: 26px; left: 32px; }
-  .stripe3 { width: 270px; height: 234px; top: 32px; left: 40px; }
-  .stripe4 { width: 255px; height: 221px; top: 38px; left: 47px; }
-  .stripe5 { width: 240px; height: 208px; top: 44px; left: 55px; }
-  .stripe6 { width: 225px; height: 195px; top: 50px; left: 62px; }
-  .stripe7 { width: 210px; height: 182px; top: 56px; left: 70px; }
-  .stripe8 { width: 195px; height: 169px; top: 62px; left: 77px; }
-  .stripe9 { width: 180px; height: 156px; top: 68px; left: 85px; }
-  .stripe10 { width: 165px; height: 143px; top: 74px; left: 92px; }
-  .stripe11 { width: 150px; height: 130px; top: 80px; left: 100px; }
-  .stripe12 { width: 135px; height: 117px; top: 86px; left: 107px; }
-  .stripe13 { width: 120px; height: 104px; top: 92px; left: 115px; }
-  .stripe14 { width: 105px; height: 91px; top: 98px; left: 122px; }
+  /* Adjust pyramid SVG for mobile */
+  .pyramidSvg {
+    width: 350px;
+    height: 300px;
+    max-width: 90vw;
+    max-height: 60vh;
+  }
+
+  .animationContainer {
+    width: 350px;
+    height: 300px;
+    max-width: 90vw;
+    max-height: 60vh;
+  }
 }
 
 @media (max-width: 480px) {
