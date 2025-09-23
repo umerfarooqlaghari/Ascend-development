@@ -5,6 +5,10 @@ const HeroSection = () => {
     <section className={styles.heroSection}>
       {/* Left Side Branding */}
       <div className={styles.leftBranding}>
+      <div className={styles.verticalText}>
+          <span>ASCEND CONSULTING</span>
+        </div>
+        <div className={styles.verticalLine}></div>
         <div className={styles.verticalIcons}>
           <a href="#" className={styles.socialIcon}>
             <span>in</span>
@@ -16,10 +20,8 @@ const HeroSection = () => {
             <span>📷</span>
           </a>
         </div>
-        <div className={styles.verticalLine}></div>
-        <div className={styles.verticalText}>
-          <span>ASCEND CONSULTING</span>
-        </div>
+
+        
       </div>
 
       {/* Main Content */}

@@ -20,27 +20,28 @@
 }
 
 .verticalIcons {
-  Textcolor: #e01570;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 15px;
 }
 
 .socialIcon {
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   text-decoration: none;
   transition: all 0.3s ease;
+  color: #e01570;
+
 }
 
-.socialIcon:hover {
+/* .socialIcon:hover {
   background-color: #e01570;
   transform: scale(1.1);
-}
+} */
 
 .socialIcon span {
   color: white;
@@ -50,7 +51,7 @@
 
 .verticalLine {
   width: 2px;
-  height: 100px;
+  height: 70px;
   background-color: #fa177e;
 }
 
@@ -120,69 +121,146 @@
 /* Pyramid Stripes - Creating 3D triangular wireframe */
 .stripe {
   position: absolute;
-  border: 3px solid white;
+  border: 2px solid white;
   background: transparent;
   transform-style: preserve-3d;
-  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-  transform-origin: center bottom;
+  border-radius: 8px;
 }
 
-/* Individual stripe positioning with proper 3D depth */
+/* Create triangular outlines using CSS borders and transforms */
+.stripe::before,
+.stripe::after {
+  content: '';
+  position: absolute;
+  border: 2px solid white;
+  background: transparent;
+}
+
+/* Individual stripe positioning - creating concentric triangular outlines */
 .stripe1 {
-  width: 480px; height: 415px; top: 0px; left: 10px;
+  width: 400px;
+  height: 346px;
+  top: 50px;
+  left: 50px;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
   transform: translateZ(0px);
 }
+
 .stripe2 {
-  width: 460px; height: 398px; top: 8px; left: 20px;
-  transform: translateZ(-5px);
+  width: 380px;
+  height: 329px;
+  top: 58px;
+  left: 60px;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  transform: translateZ(-8px);
 }
+
 .stripe3 {
-  width: 440px; height: 381px; top: 16px; left: 30px;
-  transform: translateZ(-10px);
+  width: 360px;
+  height: 312px;
+  top: 66px;
+  left: 70px;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  transform: translateZ(-16px);
 }
+
 .stripe4 {
-  width: 420px; height: 364px; top: 24px; left: 40px;
-  transform: translateZ(-15px);
+  width: 340px;
+  height: 295px;
+  top: 74px;
+  left: 80px;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  transform: translateZ(-24px);
 }
+
 .stripe5 {
-  width: 400px; height: 347px; top: 32px; left: 50px;
-  transform: translateZ(-20px);
+  width: 320px;
+  height: 277px;
+  top: 82px;
+  left: 90px;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  transform: translateZ(-32px);
 }
+
 .stripe6 {
-  width: 380px; height: 329px; top: 40px; left: 60px;
-  transform: translateZ(-25px);
-}
-.stripe7 {
-  width: 360px; height: 312px; top: 48px; left: 70px;
-  transform: translateZ(-30px);
-}
-.stripe8 {
-  width: 340px; height: 295px; top: 56px; left: 80px;
-  transform: translateZ(-35px);
-}
-.stripe9 {
-  width: 320px; height: 277px; top: 64px; left: 90px;
+  width: 300px;
+  height: 260px;
+  top: 90px;
+  left: 100px;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
   transform: translateZ(-40px);
 }
+
+.stripe7 {
+  width: 280px;
+  height: 243px;
+  top: 98px;
+  left: 110px;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  transform: translateZ(-48px);
+}
+
+.stripe8 {
+  width: 260px;
+  height: 225px;
+  top: 106px;
+  left: 120px;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  transform: translateZ(-56px);
+}
+
+.stripe9 {
+  width: 240px;
+  height: 208px;
+  top: 114px;
+  left: 130px;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  transform: translateZ(-64px);
+}
+
 .stripe10 {
-  width: 300px; height: 260px; top: 72px; left: 100px;
-  transform: translateZ(-45px);
+  width: 220px;
+  height: 191px;
+  top: 122px;
+  left: 140px;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  transform: translateZ(-72px);
 }
+
 .stripe11 {
-  width: 280px; height: 243px; top: 80px; left: 110px;
-  transform: translateZ(-50px);
+  width: 200px;
+  height: 173px;
+  top: 130px;
+  left: 150px;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  transform: translateZ(-80px);
 }
+
 .stripe12 {
-  width: 260px; height: 225px; top: 88px; left: 120px;
-  transform: translateZ(-55px);
+  width: 180px;
+  height: 156px;
+  top: 138px;
+  left: 160px;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  transform: translateZ(-88px);
 }
+
 .stripe13 {
-  width: 240px; height: 208px; top: 96px; left: 130px;
-  transform: translateZ(-60px);
+  width: 160px;
+  height: 139px;
+  top: 146px;
+  left: 170px;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  transform: translateZ(-96px);
 }
+
 .stripe14 {
-  width: 220px; height: 191px; top: 104px; left: 140px;
-  transform: translateZ(-65px);
+  width: 140px;
+  height: 121px;
+  top: 154px;
+  left: 180px;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  transform: translateZ(-104px);
 }
 
 /* Enhanced 3D Effect with parallax faces */
@@ -296,20 +374,20 @@
   }
 
   /* Adjust stripe sizes for mobile */
-  .stripe1 { width: 280px; height: 280px; top: 10px; left: 10px; }
-  .stripe2 { width: 260px; height: 260px; top: 20px; left: 20px; }
-  .stripe3 { width: 240px; height: 240px; top: 30px; left: 30px; }
-  .stripe4 { width: 220px; height: 220px; top: 40px; left: 40px; }
-  .stripe5 { width: 200px; height: 200px; top: 50px; left: 50px; }
-  .stripe6 { width: 180px; height: 180px; top: 60px; left: 60px; }
-  .stripe7 { width: 160px; height: 160px; top: 70px; left: 70px; }
-  .stripe8 { width: 140px; height: 140px; top: 80px; left: 80px; }
-  .stripe9 { width: 120px; height: 120px; top: 90px; left: 90px; }
-  .stripe10 { width: 100px; height: 100px; top: 100px; left: 100px; }
-  .stripe11 { width: 80px; height: 80px; top: 110px; left: 110px; }
-  .stripe12 { width: 60px; height: 60px; top: 120px; left: 120px; }
-  .stripe13 { width: 40px; height: 40px; top: 130px; left: 130px; }
-  .stripe14 { width: 20px; height: 20px; top: 140px; left: 140px; }
+  .stripe1 { width: 300px; height: 260px; top: 20px; left: 25px; }
+  .stripe2 { width: 285px; height: 247px; top: 26px; left: 32px; }
+  .stripe3 { width: 270px; height: 234px; top: 32px; left: 40px; }
+  .stripe4 { width: 255px; height: 221px; top: 38px; left: 47px; }
+  .stripe5 { width: 240px; height: 208px; top: 44px; left: 55px; }
+  .stripe6 { width: 225px; height: 195px; top: 50px; left: 62px; }
+  .stripe7 { width: 210px; height: 182px; top: 56px; left: 70px; }
+  .stripe8 { width: 195px; height: 169px; top: 62px; left: 77px; }
+  .stripe9 { width: 180px; height: 156px; top: 68px; left: 85px; }
+  .stripe10 { width: 165px; height: 143px; top: 74px; left: 92px; }
+  .stripe11 { width: 150px; height: 130px; top: 80px; left: 100px; }
+  .stripe12 { width: 135px; height: 117px; top: 86px; left: 107px; }
+  .stripe13 { width: 120px; height: 104px; top: 92px; left: 115px; }
+  .stripe14 { width: 105px; height: 91px; top: 98px; left: 122px; }
 }
 
 @media (max-width: 480px) {
