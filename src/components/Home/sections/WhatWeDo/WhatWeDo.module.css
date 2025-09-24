@@ -75,7 +75,7 @@
   grid-template-rows: repeat(2, 1fr);
   gap: 0;
   height: fit-content;
-  border: 2px solid #333333;
+  border: 2px solid #ffffffff;
   position: relative;
 }
 
