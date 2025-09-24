@@ -22,7 +22,7 @@
 .verticalIcons {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 5px;
 }
 
 .socialIcon {
@@ -72,15 +72,17 @@
 .mainContent {
   width: 100%;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 0.8fr 1.2fr;
   align-items: center;
-  padding: 0 120px 0 200px;
+  padding: 0 0 0 200px;
+  position: relative;
 }
 
 .textContent {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  z-index: 2;
 }
 
 .title {
@@ -94,27 +96,27 @@
 
 /* Animation Container */
 .animationContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  /* display: flex; */
+  justify-content: right;
+  align-items: right;
+  /* height: 100vh; */
   perspective: 1200px;
 }
 
 .pyramid {
-  position: relative;
+  /* position: relative;
   width: 500px;
-  height: 500px;
+  height: 500px; */
   transform-style: preserve-3d;
-  animation: rotatePyramid 12s infinite linear;
+  animation: none;
 }
 
 @keyframes rotatePyramid {
   0% {
-    transform: rotateY(0deg) rotateX(10deg) rotateZ(0deg);
+    transform: rotateY(0deg) rotateX(10deg) rotateZ(20deg);
   }
   100% {
-    transform: rotateY(360deg) rotateX(10deg) rotateZ(0deg);
+    transform: rotateY(360deg) rotateX(10deg) rotateZ(20deg);
   }
 }
 
@@ -123,32 +125,60 @@
   width: 100%;
   height: 100%;
   transform-style: preserve-3d;
-  animation: pyramid3DRotate 15s linear infinite;
-  perspective: 1000px;
+  /* The SVG is currently commented out in TSX; no animation needed. */
+  /* animation: none; */
+  /* perspective: 1000px; */
 }
+
+/* Video replacing the SVG pyramid */
+.pyramidVideo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  margin-left: auto;
+  z-index: 1;
+}
+
+/* Faces for 3D pyramid (transforms handled by JS projection) */
+.face { transform-box: fill-box; transform-origin: center; }
+.faceA {}
+.faceB {}
+.faceC {}
+
+.faceStroke { vector-effect: non-scaling-stroke; }
+
 
 /* Individual pyramid layer animations */
 .pyramidLayer {
   transform-origin: center center;
-  animation: layer3DFloat 15s ease-in-out infinite;
+  /* animation: layer3DFloat 15s ease-in-out infinite; */
+   animation: depthPulse 6s ease-in-out infinite;
+  transform-origin: center;
+}
+
+@keyframes depthPulse {
+  0%, 100% { scale: 1; opacity: 1; }
+  50%      { scale: 1.08; opacity: 0.85; }
 }
 
 /* Staggered animation delays for 3D depth effect */
-.layer1 { animation-delay: 0s; }
-.layer2 { animation-delay: -0.3s; }
-.layer3 { animation-delay: -0.6s; }
-.layer4 { animation-delay: -0.9s; }
-.layer5 { animation-delay: -1.2s; }
-.layer6 { animation-delay: -1.5s; }
-.layer7 { animation-delay: -1.8s; }
-.layer8 { animation-delay: -2.1s; }
-.layer9 { animation-delay: -2.4s; }
-.layer10 { animation-delay: -2.7s; }
-.layer11 { animation-delay: -3s; }
-.layer12 { animation-delay: -3.3s; }
-.layer13 { animation-delay: -3.6s; }
-.layer14 { animation-delay: -3.9s; }
-.layer15 { animation-delay: -4.2s; }
+.layer1 { animation-delay: 0s; transform: translateZ(20px);}
+.layer2 { animation-delay: -0.3s; transform: translateZ(40px);}
+.layer3 { animation-delay: -0.6s; transform: translateZ(60px);}
+.layer4 { animation-delay: -0.9s; transform: translateZ(80px);}
+.layer5 { animation-delay: -1.2s; transform: translateZ(100px);}
+.layer6 { animation-delay: -1.5s; transform: translateZ(120px);}
+.layer7 { animation-delay: -1.8s; transform: translateZ(140px);}
+.layer8 { animation-delay: -2.1s; transform: translateZ(160px);}
+.layer9 { animation-delay: -2.4s; transform: translateZ(180px);}
+.layer10 { animation-delay: -2.7s; transform: translateZ(200px);}
+.layer11 { animation-delay: -3s; transform: translateZ(220px);}
+.layer12 { animation-delay: -3.3s; transform: translateZ(240px);}
+.layer13 { animation-delay: -3.6s; transform: translateZ(260px);}
+.layer14 { animation-delay: -3.9s; transform: translateZ(280px);}
+.layer15 { animation-delay: -4.2s; transform: translateZ(300px);}
+
 
 /* Main 3D pyramid rotation animation */
 @keyframes pyramid3DRotate {
@@ -269,8 +299,8 @@
   }
 
   .pyramid {
-    width: 350px;
-    height: 350px;
+    width: 350px;  /* Increase video size (desktop) by raising width */
+    height: 350px; /* Increase video size (desktop) by raising height */
   }
 }
 
@@ -291,8 +321,8 @@
   }
 
   .pyramid {
-    width: 300px;
-    height: 300px;
+    width: 300px;  /* Increase video size (tablet) by raising width */
+    height: 300px; /* Increase video size (tablet) by raising height */
   }
 
   .animationContainer {
@@ -340,7 +370,7 @@
   }
 
   .pyramid {
-    width: 250px;
-    height: 250px;
+    width: 250px;  /* Increase video size (mobile) by raising width */
+    height: 250px; /* Increase video size (mobile) by raising height */
   }
 }
