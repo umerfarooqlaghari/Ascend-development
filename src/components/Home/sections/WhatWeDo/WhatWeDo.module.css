@@ -75,7 +75,6 @@
   grid-template-rows: repeat(2, 1fr);
   gap: 0;
   height: fit-content;
-  border: 2px solid #ffffffff;
   position: relative;
 }
 
@@ -99,12 +98,14 @@
   left: 66.666%;
 }
 
-/* Horizontal separating line */
+/* Horizontal separating lines */
+.imageGrid .imageItem:nth-child(1)::after,
+.imageGrid .imageItem:nth-child(2)::after,
 .imageGrid .imageItem:nth-child(3)::after {
   content: '';
   position: absolute;
-  left: -100%;
-  right: -100%;
+  left: 0;
+  right: 0;
   bottom: 0;
   height: 2px;
   background-color: #333333;
@@ -113,14 +114,13 @@
 
 .imageItem {
   aspect-ratio: 1;
-  background-color: #f5f5f5;
+  background-color: #ffffffff;
   position: relative;
   border-radius: 0;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid #333333;
 }
 
 .imageItem img {
