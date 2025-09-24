@@ -38,38 +38,88 @@ const HeroSection = () => {
           </h1>
         </div>
 
-        {/* Animated Pyramid */}
+        {/* Animated 3D Pyramid */}
         <div className={styles.animationContainer}>
           <div className={styles.pyramid}>
             <svg
-              width="500"
-              height="400"
-              viewBox="0 0 500 400"
+              width="600"
+              height="500"
+              viewBox="0 0 600 500"
               className={styles.pyramidSvg}
             >
-              {/* Generate 20 concentric triangular wireframes */}
-              {Array.from({ length: 20 }, (_, i) => {
-                const scale = 1 - (i * 0.04); // Each triangle is 4% smaller
-                const strokeWidth = Math.max(1, 4 - (i * 0.1)); // Thicker outer lines
-                const opacity = 1 - (i * 0.02); // Slight fade for depth
+              {/* Generate 3D pyramid wireframe with multiple faces */}
+              {Array.from({ length: 15 }, (_, i) => {
+                const scale = 1 - (i * 0.06); // Each layer is 6% smaller
+                const strokeWidth = Math.max(1, 3 - (i * 0.1)); // Thicker outer lines
+                const opacity = 1 - (i * 0.03); // Slight fade for depth
 
-                // Calculate triangle points
-                const centerX = 250;
-                const topY = 50 + (i * 8);
-                const bottomY = 350 - (i * 6);
-                const leftX = centerX - (200 * scale);
-                const rightX = centerX + (200 * scale);
+                // Base triangle (front face)
+                const frontCenterX = 200;
+                const frontTopY = 80 + (i * 12);
+                const frontBottomY = 400 - (i * 8);
+                const frontLeftX = frontCenterX - (150 * scale);
+                const frontRightX = frontCenterX + (150 * scale);
+
+                // Right face (3D depth)
+                const rightCenterX = 400;
+                const rightTopY = 60 + (i * 10);
+                const rightBottomY = 380 - (i * 6);
+                const rightLeftX = rightCenterX - (120 * scale);
+                const rightRightX = rightCenterX + (120 * scale);
+
+                // 3D pyramid structure with connecting lines
 
                 return (
-                  <polygon
-                    key={i}
-                    points={`${centerX},${topY} ${leftX},${bottomY} ${rightX},${bottomY}`}
-                    fill="none"
-                    stroke="white"
-                    strokeWidth={strokeWidth}
-                    opacity={opacity}
-                    className={`${styles.triangleStroke} ${styles[`triangle${i + 1}`]}`}
-                  />
+                  <g key={i} className={`${styles.pyramidLayer} ${styles[`layer${i + 1}`]}`}>
+                    {/* Front face triangle */}
+                    <polygon
+                      points={`${frontCenterX},${frontTopY} ${frontLeftX},${frontBottomY} ${frontRightX},${frontBottomY}`}
+                      fill="none"
+                      stroke="white"
+                      strokeWidth={strokeWidth}
+                      opacity={opacity}
+                    />
+
+                    {/* Right face triangle */}
+                    <polygon
+                      points={`${rightCenterX},${rightTopY} ${rightLeftX},${rightBottomY} ${rightRightX},${rightBottomY}`}
+                      fill="none"
+                      stroke="white"
+                      strokeWidth={strokeWidth}
+                      opacity={opacity * 0.8}
+                    />
+
+                    {/* Connecting lines for 3D depth */}
+                    <line
+                      x1={frontCenterX}
+                      y1={frontTopY}
+                      x2={rightCenterX}
+                      y2={rightTopY}
+                      stroke="white"
+                      strokeWidth={strokeWidth}
+                      opacity={opacity * 0.6}
+                    />
+
+                    <line
+                      x1={frontRightX}
+                      y1={frontBottomY}
+                      x2={rightRightX}
+                      y2={rightBottomY}
+                      stroke="white"
+                      strokeWidth={strokeWidth}
+                      opacity={opacity * 0.6}
+                    />
+
+                    <line
+                      x1={frontLeftX}
+                      y1={frontBottomY}
+                      x2={rightLeftX}
+                      y2={rightBottomY}
+                      stroke="white"
+                      strokeWidth={strokeWidth}
+                      opacity={opacity * 0.6}
+                    />
+                  </g>
                 );
               })}
             </svg>
