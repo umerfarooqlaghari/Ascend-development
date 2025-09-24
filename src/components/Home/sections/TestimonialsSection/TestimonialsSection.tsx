@@ -36,7 +36,7 @@ const TestimonialsSection = () => {
           {testimonials.map((testimonial, index) => (
             <div key={index} className={styles.testimonialCard}>
               <div className={styles.quote}>
-                <span className={styles.quoteIcon}>"</span>
+                <span className={styles.quoteIcon}>&quot;</span>
                 <p className={styles.quoteText}>{testimonial.quote}</p>
               </div>
               <div className={styles.author}>

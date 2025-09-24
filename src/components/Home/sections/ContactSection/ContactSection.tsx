@@ -9,7 +9,7 @@ const ContactSection = () => {
           <div className={styles.textContent}>
             <h2 className={styles.title}>Ready to Transform Your Organization?</h2>
             <p className={styles.subtitle}>
-              Let's discuss how we can help your organization ascend to new heights of success. 
+              Let&apos;s discuss how we can help your organization ascend to new heights of success. 
               Our team of experts is ready to partner with you on your transformation journey.
             </p>
             <div className={styles.contactInfo}>

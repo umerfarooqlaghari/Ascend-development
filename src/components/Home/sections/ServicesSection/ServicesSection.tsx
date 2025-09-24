@@ -36,7 +36,7 @@ const ServicesSection = () => {
         <div className={styles.header}>
           <h2 className={styles.title}>Our Services</h2>
           <p className={styles.subtitle}>
-            Comprehensive consulting solutions tailored to your organization's unique needs and challenges.
+            Comprehensive consulting solutions tailored to your organization&apos;s unique needs and challenges.
           </p>
         </div>
         

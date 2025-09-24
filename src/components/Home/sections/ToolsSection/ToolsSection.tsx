@@ -31,7 +31,7 @@ const ToolsSection = () => {
         <div className={styles.header}>
           <h2 className={styles.title}>Our Tools</h2>
           <p className={styles.subtitle}>
-            Powerful tools and methodologies to accelerate your organization's growth and transformation.
+            Powerful tools and methodologies to accelerate your organization&apos;s growth and transformation.
           </p>
         </div>
         
